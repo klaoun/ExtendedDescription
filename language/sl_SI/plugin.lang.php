@@ -20,14 +20,33 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['Extended Description have been successfully installed. Now you can use all its features in most text boxes of Piwigo.'] = 'Modul "Razširjen opis" je bil uspešno nameščen. Sedaj lahko uporabljate možnosti modula v večini besedilnih blokov Piwiga.';
-$lang['Extended descriptions'] = 'Razširjen opis';
-$lang['Hide elements'] = 'Skrij predmete';
-$lang['Insert an album or a photo'] = 'Vstavi album ali sliko';
-$lang['Multilingual descriptions'] = 'Večjezični opis';
-$lang['Redirect elements'] = 'Preusmeri predmete';
-$lang['This category is redirected to %s'] = 'Ta album je preusmerjen na %s';
+//$lang['Extended Description have been successfully installed. Now you can use all its features in most text boxes of Piwigo.'] = 'Modul "Razširjen opis" je bil uspešno nameščen. Sedaj lahko uporabljate možnosti modula v večini besedilnih blokov Piwiga.';
+//$lang['Extended descriptions'] = 'Razširjen opis';
+//$lang['Hide elements'] = 'Skrij predmete';
+//$lang['Insert an album or a photo'] = 'Vstavi album ali sliko';
+//$lang['Multilingual descriptions'] = 'Večjezični opis';
+//$lang['Redirect elements'] = 'Preusmeri predmete';
+//$lang['This category is redirected to %s'] = 'Ta album je preusmerjen na %s';
+//$lang['Use Extended Description tags...'] = 'Uporabi oznake Razširjen opis...';
+//$lang['Back'] = 'Nazaj'; //no more
+//$lang['Insert a carousel'] = 'Vstavi vrtiljak';
+//$lang['Login link & logged in block'] = 'Povezava prijave & sklop prijavljen';
+
+//New
 $lang['Use Extended Description tags...'] = 'Uporabi oznake Razširjen opis...';
-$lang['Back'] = 'Nazaj';
+$lang['This category is redirected to %s'] = 'Ta album je preusmerjen na %s';
+$lang['Extended Description have been successfully installed. Now you can use all its features in most text boxes of Piwigo.'] = 'Razširjeni opis je bil uspešno nameščen. Zdaj lahko uporabljate vse njegove funkcije v večini besedilnih polj Piwigo.';
+
+$lang['Multilingual'] = 'Večjezični';
+$lang['Descriptions'] = 'Opisi';
+$lang['Carrousel'] = 'Vrtiljak';
+$lang['Redirects'] = 'Preusmeritve';
+$lang['Login block'] = 'Blok za prijavo';
+
+$lang['Multilingual descriptions'] = 'Večjezični opis';
+$lang['Extended descriptions'] = 'Razširjen opis';
+$lang['Insert an album or a photo'] = 'Vstavi album ali sliko';
+$lang['Hide elements'] = 'Skrij predmete';
+$lang['Redirect elements'] = 'Preusmeri predmete';
+$lang['Login link & logged in block'] = 'Povezava za prijavo in blok za prijavo';
 $lang['Insert a carousel'] = 'Vstavi vrtiljak';
-$lang['Login link & logged in block'] = 'Povezava prijave & sklop prijavljen';
