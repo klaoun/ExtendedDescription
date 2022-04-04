@@ -30,5 +30,9 @@ $lang['Extended Description have been successfully installed. Now you can use al
 $lang['Hide elements'] = 'Skjul elementer';
 $lang['Redirect elements'] = 'Viderestil elementer';
 $lang['Login link & logged in block'] = 'Loginlink og logget på-blok';
-$lang['Back'] = 'Tilbage';
 $lang['Insert a carousel'] = 'Indsæt en karussel';
+$lang['Carrousel'] = 'Karrusel';
+$lang['Descriptions'] = 'Beskrivelser';
+$lang['Login block'] = 'Loginblokke';
+$lang['Multilingual'] = 'Flersproget';
+$lang['Redirects'] = 'Viderestillinger';
