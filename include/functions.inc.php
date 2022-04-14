@@ -170,6 +170,7 @@ SELECT id, name, permalink
  * @string size:  picture size                   (default: M)
  * @bool   html:  return complete html structure (default: true)
  * @bool   link:  add a link to the picture      (default: false)
+ * @int    nb_images: number of picture              (default: 1)
  */
 function extdesc_get_random_photo($param)
 {
@@ -179,6 +180,7 @@ function extdesc_get_random_photo($param)
     'size' =>  array(extdesc_get_deriv_regex(), 'M'),
     'html' =>  array('boolean', true),
     'link' =>  array('boolean', false),
+    'nb_images' => array('\d+', 1),
     );
 
   $params = extdesc_parse_parameters($param, $default_params);
@@ -214,14 +216,38 @@ SELECT id, category_id
 
   $query.= '
   ORDER BY '.DB_RANDOM_FUNCTION.'()
-  LIMIT 1
+  LIMIT '.$params['nb_images'].'
 ;';
   $result = pwg_query($query);
 
   if (pwg_db_num_rows($result))
   {
-    list($params['id'], $params['album']) = pwg_db_fetch_row($result);
-    return extdesc_get_photo_sized($params);
+    if(1 == $params['nb_images'])
+    {
+      list($params['id'], $params['album']) = pwg_db_fetch_row($result);
+      return extdesc_get_photo_sized($params);
+    }
+    else
+    { 
+      $random_images = array();
+      $random_image_info = array();
+    
+      while ($row = pwg_db_fetch_assoc($result))
+      {
+        $params['id'] = $row['id'];
+        $params['album'] = $row['category_id'];
+
+        $random_images[] = '<li>'.extdesc_get_photo_sized($params).'</li>';
+      }
+
+      array_unshift($random_images, '<ul id="thumbnails">');
+      array_push($random_images, '</ul>');
+
+      global $template;
+      $template->func_combine_css(array('path' => EXTENDED_DESC_PATH .'template/thumbnails.css'));
+
+      return implode(' ',$random_images);
+    }
   }
 
   return '';
