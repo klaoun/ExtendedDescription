@@ -240,7 +240,7 @@ SELECT id, category_id
         $random_images[] = '<li>'.extdesc_get_photo_sized($params).'</li>';
       }
 
-      array_unshift($random_images, '<ul id="thumbnails">');
+      array_unshift($random_images, '<ul class="extdesc-random-thumbnails">');
       array_push($random_images, '</ul>');
 
       global $template;
