@@ -317,23 +317,20 @@ function extdesc_get_slider($param)
   // pictures from album...
   if (!empty($params['album']))
   {
-    // get image order inside category
+    $query = '
+SELECT name, image_order
+  FROM '.CATEGORIES_TABLE.'
+  WHERE id = '.$params['album'].'
+;';
+    list($album_name, $order_by) = pwg_db_fetch_row(pwg_query($query));
+
     if ($params['random'])
     {
       $order_by = DB_RANDOM_FUNCTION.'()';
     }
-    else
+    else if (empty($order_by))
     {
-      $query = '
-SELECT image_order
-  FROM '.CATEGORIES_TABLE.'
-  WHERE id = '.$params['album'].'
-;';
-      list($order_by) = pwg_db_fetch_row(pwg_query($query));
-      if (empty($order_by))
-      {
-        $order_by = str_replace('ORDER BY ', null, $conf['order_by_inside_category']);
-      }
+      $order_by = str_replace('ORDER BY ', null, $conf['order_by_inside_category']);
     }
 
     // get pictures ids
@@ -361,6 +358,7 @@ SELECT image_id
   else
   {
     $ids = $params['list'];
+    $album_name = '';
   }
 
   // get pictures
@@ -381,7 +379,7 @@ SELECT *
         'image_id' => $row['id'],
         'category' => array(
           'id' => $params['album'],
-          'name' => '',
+          'name' => $album_name,
           'permalink' => '',
           )));
     }
