@@ -30,11 +30,11 @@
     <img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" {$derivative->get_size_htm()} {if $SLIDER.title}title="<a href='{$thumbnail.URL}'>{$thumbnail.NAME|replace:'"':"'"}</a>"{/if} {if $SLIDER.control_thumbs}data-thumb="{$derivative_thumb}"{/if}>
 
     {assign var=derivative_size value=$derivative->get_size()}
-    {math assign=slider_full_width equation="max(x,y)" x=$slider_full_width y=$derivative_size[0]}
-    {if $SLIDER.elastic}
-      {math assign=slider_full_height equation="max(x,y)" x=$slider_full_height y=$derivative_size[1]}
+    {$slider_full_width = max($slider_full_width, $derivative_size[0])}
+    {if $SLIDER.elastic}    
+      {$slider_full_height = max($slider_full_height, $derivative_size[1])}
     {else}
-      {math assign=slider_full_height equation="min(x,y)" x=$slider_full_height y=$derivative_size[1]}
+      {$slider_full_height = min($slider_full_height, $derivative_size[1])}
     {/if}
     {if $smarty.foreach.slider.first}
       {assign var=slider_init_width value=$derivative_size[0]}
