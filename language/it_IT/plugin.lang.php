@@ -12,4 +12,6 @@ $lang['Redirect elements'] = 'Reindirizza elemento';
 $lang['Hide elements'] = 'Nascondi elementi';
 $lang['Login link & logged in block'] = 'Link di accesso & registrati in blocco';
 $lang['Insert a carousel'] = 'Inserisci un carosello';
-$lang['Back'] = 'Indietro';
+$lang['Carrousel'] = 'Carosello';
+$lang['Descriptions'] = 'Descrizioni';
+$lang['Multilingual'] = 'Multilingua';
