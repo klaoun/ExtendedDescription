@@ -15,3 +15,5 @@ $lang['Insert a carousel'] = 'Inserisci un carosello';
 $lang['Carrousel'] = 'Carosello';
 $lang['Descriptions'] = 'Descrizioni';
 $lang['Multilingual'] = 'Multilingua';
+$lang['Login block'] = 'Blocco accesso.';
+$lang['Redirects'] = 'Reindirizzamenti.';
