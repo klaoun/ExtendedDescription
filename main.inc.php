@@ -59,6 +59,7 @@ add_event_handler ('render_element_description', 'get_extended_desc', EVENT_HAND
 add_event_handler ('nbm_render_user_customize_mail_content', 'get_extended_desc');
 add_event_handler ('mail_group_assign_vars',                 'extended_desc_mail_group_assign_vars');
 // removals
-add_event_handler ('loc_end_index_category_thumbnails', 'ext_remove_cat', EVENT_HANDLER_PRIORITY_NEUTRAL, 2);
+add_event_handler ('loc_begin_index_category_thumbnails_query', 'ext_loc_begin_index_category_thumbnails_query');
+add_event_handler ('loc_end_index_category_thumbnails', 'ext_remove_cat', EVENT_HANDLER_PRIORITY_NEUTRAL, 2); // not very useful since the add of loc_begin_index_category_thumbnails_query
 add_event_handler ('loc_end_index_thumbnails',          'ext_remove_image', EVENT_HANDLER_PRIORITY_NEUTRAL, 2);
 add_event_handler ('get_categories_menu_sql_where',     'ext_remove_menubar_cats');
