@@ -344,7 +344,7 @@ function ext_remove_image($tpl_var, $pictures)
   $i=0;
   while ($i<count($tpl_var))
   {
-    if (substr_count($pictures[$i]['name'], $conf['ExtendedDescription']['not_visible']))
+    if (substr_count($pictures[$i]['name'] ?? '', $conf['ExtendedDescription']['not_visible']))
     {
       array_splice($tpl_var, $i, 1);
       array_splice($pictures, $i, 1);
